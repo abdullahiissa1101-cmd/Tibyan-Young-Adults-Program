@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tibyan Young Adults Program</title>
+  <meta
+    name="description"
+    content="Register for the Tibyan Young Adults Program in Falls Church, Virginia. Classes are held Saturdays and Sundays from 5:00 PM to 8:00 PM."
+  />
+  <style>
+    :root {
+      --navy: #12324a;
+      --teal: #1f6f78;
+      --gold: #d9b86c;
+      --cream: #f8f4ec;
+      --white: #ffffff;
+      --text: #24323d;
+      --muted: #5b6b75;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--white);
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(18, 50, 74, 0.78), rgba(18, 50, 74, 0.78)),
+        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 90px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #1d1d1d;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.85);
+      color: var(--white);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .hero-card p {
+      margin: 8px 0;
+      font-size: 0.98rem;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-alt {
+      background: var(--white);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 2rem;
+      color: var(--navy);
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--gold);
+    }
+
+    .section-alt .card {
+      background: #fcfcfc;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .schedule-box {
+      background: linear-gradient(135deg, #ffffff, #f7fbfb);
+      border-left: 6px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight {
+      color: var(--teal);
+      font-weight: bold;
+    }
+
+    .register-wrap {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .info-panel,
+    .form-panel {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-panel h3,
+    .form-panel h3 {
+      margin-top: 0;
+      color: var(--navy);
+    }
+
+    .notice {
+      background: #f4efe1;
+      border-left: 4px solid var(--gold);
+      padding: 16px 18px;
+      border-radius: 10px;
+      margin-top: 16px;
+      color: #51452a;
+    }
+
+    iframe {
+      width: 100%;
+      min-height: 820px;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.92);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(217, 184, 108, 0.18);
+      color: var(--gold);
+      border: 1px solid rgba(217, 184, 108, 0.35);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    .contact-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .register-wrap,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      iframe {
+        min-height: 900px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Tibyan Young Adults Program</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#register">Register</a>
+        <a href="#payment">Payment</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Community • Learning • Growth</div>
+        <h1>Tibyan Young Adults Program</h1>
+        <p>
+          At Tibyan, our mission is to provide a specialized youth program designed
+          for students proficient in Quranic studies.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#register">Register Now</a>
+          <a class="btn btn-secondary" href="#payment">Pay Now</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Program Details</h3>
+        <p><strong>Class Name:</strong> Tibyan Young Adults Program</p>
+        <p><strong>Days:</strong> Saturdays and Sundays</p>
+        <p><strong>Time:</strong> 5:00 PM – 8:00 PM</p>
+        <p><strong>Location:</strong> Falls Church, VA, United States, Virginia</p>
+        <p><strong>Program Fee:</strong> $90 per month</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <h2>About the Program</h2>
+      <p class="section-intro">
+        At Tibyan, our mission is to provide a specialized youth program designed for
+        students proficient in Quranic studies.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Purpose</h3>
+          <p>
+            Our aim is to support young adults in achieving excellence in Quranic knowledge.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Who It’s For</h3>
+          <p>
+            Young Adults.
+          </p>
+        </div>
+        <div class="card">
+          <h3>What to Expect</h3>
+          <p>
+            Subjects offered include Strengthening Hifdth, Tajweed Theory, Jazariyyah,
+            Tuhfatul Atfal, and Shadibyyah.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section">
+    <div class="container">
+      <h2>Schedule</h2>
+      <p class="section-intro">
+        Classes are currently in session and are held weekly on weekends.
+      </p>
+
+      <div class="schedule-box">
+        <p><strong>Program:</strong> Tibyan Young Adults Program</p>
+        <p><strong>Days:</strong> Saturdays and Sundays</p>
+        <p><strong>Time:</strong> <span class="highlight">5:00 PM – 8:00 PM</span></p>
+        <p><strong>Location:</strong> Falls Church, VA, United States, Virginia</p>
+        <p><strong>Status:</strong> Currently in session</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register" class="section section-alt">
+    <div class="container">
+      <h2>Register</h2>
+      <p class="section-intro">
+        Complete the registration form below. Your information will be stored automatically.
+        After submitting your registration, please complete payment through the payment link
+        to confirm your seat.
+      </p>
+
+      <div class="register-wrap">
+        <div class="info-panel">
+          <h3>Registration Information</h3>
+          <p>
+            Please complete the form with accurate contact details so we can reach you
+            with program updates and confirmation information.
+          </p>
+          <p>
+            Your registration is received when you submit the form, and your information
+            will be stored automatically through the registration system.
+          </p>
+          <div class="notice">
+            Your registration is received when you submit the form. Your place is confirmed
+            after payment is completed.
+          </div>
+
+          <div id="payment" style="margin-top: 28px;">
+            <h3>Payment</h3>
+            <p>
+              After registering, use the payment link below to submit payment for the program.
+            </p>
+            <p>
+              <a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer">
+                Pay Now
+              </a>
+            </p>
+            <p><strong>Fee:</strong> $90 per month</p>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <h3>Registration Form</h3>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSco31TFh0bkg9fJ-bbTqJ6CejAxKv11euRYugJMNCJrnGIxQA/viewform?embedded=true"
+            title="Tibyan Young Adults Program Registration Form"
+          >
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Tibyan Young Adults Program</strong></p>
+      <p>Saturdays and Sundays • 5:00 PM – 8:00 PM</p>
+      <p>Falls Church, VA, United States, Virginia</p>
+      <p>
+        <a class="contact-link" href="tel:+17032008668">(703) 200-8668</a> |
+        <a class="contact-link" href="mailto:tibyaninstitute1@gmail.com">tibyaninstitute1@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
