@@ -7,102 +7,125 @@
   <meta name="description" content="Tibyan Institute for Qur'an Memorization and Islamic Sciences — register for the Young Adults program in Falls Church, VA." />
   <style>
     :root{
-      --navy:#0b4da0;
-      --gold:#c59b2a;
-      --teal:#1f6f78;
-      --white:#ffffff;
-      --muted:#5b6b75;
-      --bg:#f7f9fb;
-      --card-radius:14px;
-      --shadow: 0 10px 30px rgba(2,18,36,0.06);
-      --container-width:1100px;
+      --earthy-brown: #a67c52;
+      --navy-blue: #0b4da0; /* Retained from original brand colors, but as a secondary accent */
+      --sage-green: #7c9071;
+      --cream-beige: #f9f6f1;
+      --deep-brown: #3e2723;
+      --muted-earth: #c7b198;
+      --white: #ffffff;
+      --card-radius: 12px;
+      --shadow: 0 8px 24px rgba(62,39,35,0.08); /* Warm-toned shadow */
+      --container-width: 1100px;
     }
 
     /* Reset & base */
     *{box-sizing:border-box}
     html{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;line-height:1.5}
-    body{margin:0;background:var(--bg);color:#21303a;-webkit-font-smoothing:antialiased}
+    body{margin:0;background:var(--cream-beige);color:var(--deep-brown);-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     .container{width:min(var(--container-width),94%);margin:0 auto}
 
     /* Topbar / header */
     header.site-header{
-      background:linear-gradient(180deg,var(--navy),#083a7a);
-      color:var(--white);
+      background: linear-gradient(180deg, var(--earthy-brown), #8c6844);
+      color: var(--deep-brown);
       position:sticky;top:0;z-index:40;
-      box-shadow:0 6px 20px rgba(2,18,36,0.08);
+      box-shadow:0 4px 15px rgba(62,39,35,0.1);
     }
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:64px;width:auto;border-radius:10px;background:rgba(255,255,255,0.06);padding:6px;box-shadow:0 6px 18px rgba(2,18,36,0.08)}
-    .brand .title{font-weight:800;font-size:1.05rem;letter-spacing:0.2px}
-    nav.header-nav{display:flex;gap:14px;align-items:center}
-    nav.header-nav a{color:rgba(255,255,255,0.95);padding:8px 12px;border-radius:10px;font-weight:700;font-size:0.95rem}
-    nav.header-nav a:hover{background:rgba(255,255,255,0.04)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0} /* Increased padding slightly */
+    .brand{display:flex;align-items:center;gap:18px} /* Increased gap */
+    .brand img{
+        height:100px; /* Expand logo size as requested */
+        width:auto;
+        border-radius:8px;
+        background: rgba(255, 255, 255, 0.4); /* Lighter background for the dark logo on brown header */
+        padding:8px;
+    }
+    .brand .title{
+        font-weight:800;
+        font-size:1.2rem; /* Slightly larger title for the larger header */
+        letter-spacing:0.2px;
+        color: var(--deep-brown);
+    }
+    nav.header-nav{display:flex;gap:12px;align-items:center}
+    nav.header-nav a{
+        color: var(--deep-brown);
+        padding:10px 14px;
+        border-radius:8px;
+        font-weight:700;
+        font-size:1rem;
+    }
+    nav.header-nav a:hover{
+        background: rgba(255, 255, 255, 0.15);
+    }
+    nav.header-nav a.instagram-nav-link {color: var(--deep-brown);}
 
     /* Hero */
     .hero{
-      color:var(--white);
-      padding:84px 0 56px;
+      color: var(--deep-brown);
+      padding:100px 0 75px;
       background:
-        linear-gradient(180deg, rgba(11,77,160,0.85), rgba(6,36,80,0.85)),
-        url('https://images.unsplash.com/photo-1616422840391-fa670d4b2ae7?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+        linear-gradient(180deg, rgba(249, 246, 241, 0.92), rgba(249, 246, 241, 0.98)), /* Light gradient for brown text on light background image */
+        url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTWoddrMI6cli0R3STCSv4_vI-Xm0JpPi-ev9VZ3QmwokKj53PglJ9Jj4amhXW9LGXMPW4QmFHavu2oDsw') center/cover no-repeat;
       position:relative;
     }
-    .hero .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;width:min(var(--container-width),94%);margin:0 auto}
-    .hero h1{margin:0;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.02;font-weight:800}
-    .hero p.lead{margin:12px 0 0;color:rgba(255,255,255,0.95);max-width:680px;font-size:1.05rem}
-    .hero .cta-row{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;cursor:pointer;text-align:center}
-    .btn-primary{background:var(--gold);color:#081226}
-    .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,0.12);color:var(--white)}
+    .hero .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:center;width:min(var(--container-width),94%);margin:0 auto}
+    .hero h1{margin:0;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1;font-weight:800;color: var(--deep-brown);}
+    .hero p.lead{margin:14px 0 0;color: var(--deep-brown);max-width:640px;font-size:1.05rem;line-height:1.6; opacity: 0.9}
+    .hero .cta-row{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:700;cursor:pointer;text-align:center;transition: background 0.2s}
+    .btn-primary{background:var(--sage-green);color:var(--white)}
+    .btn-primary:hover{background:#677b5d}
+    .btn-ghost{background:transparent;border:2px solid var(--deep-brown);color:var(--deep-brown)}
+    .btn-ghost:hover{background:rgba(62, 39, 35, 0.05)}
 
     .hero-card{
-      background:rgba(255,255,255,0.07);
-      border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.1);
-      box-shadow:var(--shadow);backdrop-filter:blur(8px);
+      background: rgba(199, 177, 152, 0.2); /* Tint of muted earthy color for readability */
+      border-radius:10px;padding:24px;border:1px solid rgba(62, 39, 35, 0.1);
+      backdrop-filter:blur(10px);
     }
-    .hero-card h3{margin:0 0 12px;font-size:1.1rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px}
-    .hero-card p{margin:8px 0;color:rgba(255,255,255,0.95);font-size:0.98rem}
+    .hero-card h3{margin:0 0 12px;font-size:1rem;color:var(--earthy-brown);text-transform:uppercase;letter-spacing:0.5px}
+    .hero-card p{margin:8px 0;color:var(--deep-brown);font-size:0.95rem; opacity: 0.95}
 
     /* Main sections */
-    main{margin-top:28px}
-    section{padding:48px 0}
-    .section-title{font-size:1.6rem;color:var(--navy);margin:0 0 8px}
+    main{margin-top:16px}
+    section{padding:56px 0}
+    .section-title{font-size:1.5rem;color:var(--deep-brown);margin:0 0 8px;font-weight:800}
 
     /* About & details grid */
-    .about-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    .about-card{background:var(--white);padding:24px;border-radius:var(--card-radius);box-shadow:var(--shadow)}
-    .about-card h3{margin-top:0;color:var(--navy);border-bottom:2px solid #edf2f7;padding-bottom:6px}
-    .about-card p{color:var(--muted);margin:10px 0;line-height:1.6}
+    .about-grid{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:start}
+    .about-card{background:var(--white);padding:28px;border-radius:var(--card-radius);box-shadow:var(--shadow)}
+    .about-card p{color:var(--deep-brown);margin:0;line-height:1.65;font-size:1.02rem; opacity: 0.9}
 
     /* Registration area */
-    .register-wrap{display:grid;grid-template-columns:1fr 460px;gap:22px;align-items:start}
-    .form-panel{background:var(--white);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
-    .form-panel h3{margin-top:0;color:var(--navy)}
-    iframe.form-embed{width:100%;min-height:760px;border-radius:10px;border:1px solid rgba(2,18,36,0.04)}
+    .register-wrap{display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:start}
+    .form-panel{background:var(--white);padding:24px;border-radius:var(--card-radius);box-shadow:var(--shadow)}
+    .form-panel h3{margin-top:0;color:var(--deep-brown);font-size:1.1rem;margin-bottom:16px}
+    iframe.form-embed{width:100%;min-height:760px;border-radius:8px;border:1px solid #e1d6cc} /* Updated border color to warm tone */
 
-    .pay-panel{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:var(--shadow);border-left:6px solid var(--teal)}
-    .pay-panel h3{margin-top:0;color:var(--navy)}
-    .pay-panel p{color:var(--muted);margin:8px 0}
+    .pay-panel{background:var(--white);padding:28px;border-radius:var(--card-radius);box-shadow:var(--shadow);border-top:4px solid var(--sage-green)}
+    .pay-panel h3{margin-top:0;color:var(--deep-brown);font-size:1.1rem;margin-bottom:8px}
+    .pay-panel p{color:var(--deep-brown);margin:8px 0;font-size:0.95rem;line-height:1.6; opacity: 0.85}
 
     /* Footer */
-    footer.site-footer{background:var(--navy);color:var(--white);padding:28px 0;margin-top:28px}
-    .footer-inner{display:flex;flex-direction:column;gap:12px;align-items:center}
+    footer.site-footer{background: linear-gradient(180deg, var(--deep-brown), #2b1c19);color:var(--cream-beige);padding:36px 0}
+    .footer-inner{display:flex;flex-direction:column;gap:16px;align-items:center}
     .footer .contact{font-weight:700}
-    .footer .bio{color:rgba(255,255,255,0.92);text-align:center;max-width:760px}
+    .footer .bio{color:rgba(249, 246, 241, 0.85);text-align:center;max-width:760px;font-size:0.9rem}
 
     /* Utilities & responsive */
-    .muted{color:var(--muted)}
+    .muted{color:var(--muted-earth)} /* Warm muted color */
     @media (max-width:980px){
       .hero .hero-grid,.about-grid,.register-wrap{grid-template-columns:1fr}
-      .brand img{height:56px}
-      .hero{padding:64px 0 44px}
-      iframe.form-embed{min-height:900px}
+      .brand img{height:80px} /* Shrink slightly on smaller screens but still large */
+      .brand{flex-direction: column; text-align: center;} /* Stack on mobile */
+      .brand .title {margin-top: 10px;}
+      .hero{padding:60px 0 45px}
+      iframe.form-embed{min-height:850px}
     }
     @media (max-width:560px){
-      .brand img{height:48px}
-      .header-inner{padding:10px 0}
+      .header-inner{padding:8px 0}
       .hero h1{font-size:1.6rem}
       .btn{width:100%}
     }
@@ -112,7 +135,7 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <div class="brand" aria-label="Tibyan Institute">
-        <img src="https://raw.githubusercontent.com/abdullahiissa1101-cmd/Tibyan-Young-Adults-Program/main/logo.png" alt="Tibyan Institute logo" />
+        <img src="logo.png" alt="Tibyan Institute logo" />
         <div class="title">Tibyan Institute</div>
       </div>
 
@@ -120,18 +143,19 @@
         <a href="#about">About</a>
         <a href="#register">Register</a>
         <a href="#payment">Pay</a>
+        <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" class="instagram-nav-link">Instagram Page</a>
       </nav>
     </div>
   </header>
 
   <section class="hero" role="region" aria-label="Hero">
     <div class="hero-grid">
-      <div style="padding-right:6px">
-        <div class="tag" style="display:inline-block;background:rgba(197,155,42,0.15);color:var(--gold);padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px">Qur'an • Tajweed • Ijazah</div>
+      <div>
+        <div class="tag" style="display:inline-block;background:rgba(166, 124, 82, 0.15);color:var(--earthy-brown);padding:4px 12px;border-radius:4px;font-weight:700;margin-bottom:14px;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px">Qur'an • Tajweed • Ijazah</div>
         <h1>Tibyan Young Adults Program</h1>
         <p class="lead">A specialized youth program designed for students proficient in Quranic studies to achieve higher excellence.</p>
 
-        <div class="cta-row" aria-hidden="false">
+        <div class="cta-row">
           <a class="btn btn-primary" href="#register">Register Now</a>
           <a class="btn btn-ghost" href="#payment">Pay Tuition</a>
         </div>
@@ -141,7 +165,7 @@
         <h3 id="hero-details">Program Schedule</h3>
         <p><strong>Saturdays:</strong> 5:00 PM - 8:00 PM</p>
         <p><strong>Sundays:</strong> 5:00 PM - 8:00 PM</p>
-        <p class="muted" style="margin-top:12px; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px;">Please arrive 10 minutes early to ensure classes begin promptly.</p>
+        <p class="muted" style="margin-top:14px; font-size: 0.85rem; border-top: 1px solid rgba(62, 39, 35, 0.1); padding-top: 10px; color: var(--muted-earth)">Please note: Students are expected to arrive on time for all scheduled sessions.</p>
       </aside>
     </div>
   </section>
@@ -152,46 +176,44 @@
         <div class="about-grid">
           <!-- Mission Statement Section -->
           <div class="about-card">
-            <h2 id="about-heading" class="section-title" style="font-size:1.4rem; margin-bottom:14px;">About the Program</h2>
+            <h2 id="about-heading" class="section-title">About the Program</h2>
             <p>At Tibyan, our mission is to provide a specialized youth program designed for students proficient in Quranic studies. Our aim is to support young adults in achieving excellence in Quranic education.</p>
           </div>
 
           <!-- Location Details Section -->
-          <div class="about-card" style="border-left: 4px solid var(--teal)">
-            <h3 style="color: var(--teal)">Location</h3>
-            <p style="color: #21303a; font-weight: 600; margin-bottom: 4px;">Tibyan Institute</p>
-            <p style="margin: 0;">5699 Columbia Pike</p>
-            <p style="margin: 0;">STE 201 & 202</p>
-            <p style="margin: 0 0 10px 0;">Falls Church, VA 22041</p>
-            <a href="https://maps.google.com/?q=5699+Columbia+Pike+STE+201+Falls+Church+VA+22041" target="_blank" rel="noopener noreferrer" style="color: var(--navy); font-weight:700; font-size:0.9rem;">➔ View on Google Maps</a>
+          <div class="about-card" style="border-top: 4px solid var(--sage-green)">
+            <h2 class="section-title" style="font-size: 1.2rem; margin-bottom: 12px;">Location</h2>
+            <p style="color: var(--deep-brown); font-weight: 700; margin-bottom: 2px;">Tibyan Institute</p>
+            <p style="color: var(--muted-earth); margin: 0; font-size: 0.95rem;">5699 Columbia Pike, STE 201 & 202</p>
+            <p style="color: var(--muted-earth); margin: 0 0 14px 0; font-size: 0.95rem;">Falls Church, VA 22041</p>
+            <a href="https://maps.google.com/?q=5699+Columbia+Pike+STE+201+Falls+Church+VA+22041" target="_blank" rel="noopener noreferrer" style="color: var(--earthy-brown); font-weight:700; font-size:0.9rem; text-decoration: underline;">➔ View on Google Maps</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="register" aria-labelledby="register-heading" style="background: #f0f4f8; padding: 64px 0;">
+    <section id="register" aria-labelledby="register-heading" style="background: rgba(199, 177, 152, 0.1); padding: 64px 0;"> <!-- Subtle warm background for register section -->
       <div class="container">
-        <h2 id="register-heading" class="section-title">Registration</h2>
-        <p class="muted" style="margin:0 0 24px;">Complete the short enrollment form below. After submitting, proceed to payment to finalize your seat.</p>
-
         <div class="register-wrap">
           <div class="form-panel" aria-labelledby="form-heading">
-            <h3 id="form-heading" style="font-size: 1.1rem; margin-bottom: 12px;">Registration Form</h3>
+            <h3 id="form-heading">Registration Form</h3>
             <!-- Embedded Google Form -->
             <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSco31TFh0bkg9fJ-bbTqJ6CejAxKv11euRYugJMNCJrnGIxQA/viewform?embedded=true" title="Tibyan registration form">Loading…</iframe>
           </div>
 
           <aside class="pay-panel" id="payment" aria-labelledby="pay-heading">
-            <h3 id="pay-heading">Payment Portal</h3>
-            <p class="muted">Tuition payments are securely processed through Stripe. Secure your registration by completing payment below.</p>
-            <div style="margin-top:16px">
-              <a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer" style="display:block; width:100%">Proceed to Pay</a>
+            <h3>Payment Portal</h3>
+            <p class="muted">Payments are processed securely each month. Please complete your registration by completing the payment below.</p>
+            <div style="margin-top:20px">
+              <a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer" style="display:block; width:100%">Proceed to Payment</a>
             </div>
 
-            <div style="margin-top:24px; padding-top:16px; border-top:1px solid #edf2f7; color:var(--muted); font-size:0.95rem">
-              <p style="margin: 0 0 4px 0; font-weight:700; color:var(--navy)">Support & Inquiries</p>
+            <div style="margin-top:28px; padding-top:16px; border-top:1px solid #e1d6cc; color:var(--deep-brown); font-size:0.95rem">
+              <p style="margin: 0 0 6px 0; font-weight:700; color:var(--deep-brown)">Support & Inquiries</p>
               <p style="margin:4px 0"><a href="tel:+17032008668" style="color:inherit;font-weight:600">(703) 200-8668</a></p>
               <p style="margin:4px 0"><a href="mailto:tibyaninstitute1@gmail.com" style="color:inherit;font-weight:600">tibyaninstitute1@gmail.com</a></p>
+              <p style="margin:12px 0 4px 0; font-weight:700; color:var(--deep-brown)">Social Media</p>
+              <p style="margin:4px 0"><a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" style="color:inherit;font-weight:600; text-decoration: underline;">Visit our Instagram Page</a></p>
             </div>
           </aside>
         </div>
@@ -203,12 +225,14 @@
     <div class="container footer-inner">
       <div style="text-align:center">
         <div style="font-weight:800;font-size:1.1rem;letter-spacing:0.5px">Tibyan Institute</div>
-        <div class="contact" style="margin-top:6px"><a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" style="color:var(--gold)">@tibyan.institute</a></div>
+        <div class="contact" style="margin-top:6px">
+          <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" style="color:var(--earthy-brown)">Our Instagram Page: @tibyan.institute</a>
+        </div>
       </div>
 
-      <div class="bio" aria-hidden="false" style="font-size:0.9rem; opacity:0.85;">
-        <div style="font-size:1.1rem; margin-bottom:4px;">‎معهد التبيان لتحفيظ القرآن والعلوم الاسلامية</div>
-        <div>Tibyan Institute for Qur'an Memorization and Islamic Sciences — Falls Church, VA</div>
+      <div class="bio" aria-hidden="false">
+        <div style="font-size:1.1rem; margin-bottom:4px; font-weight: 500;">‎معهد التبيان لتحفيظ القرآن والعلوم الاسلامية</div>
+        <div style="opacity: 0.8;">Tibyan Institute for Qur'an Memorization and Islamic Sciences — Falls Church, VA</div>
       </div>
     </div>
   </footer>
