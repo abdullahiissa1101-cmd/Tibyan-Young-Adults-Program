@@ -1,10 +1,162 @@
-HTML
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Test Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tibyan Institute — Young Adults Program</title>
+  <meta name="description" content="Tibyan Institute for Qur'an Memorization and Islamic Sciences — register for the Young Adults program in Falls Church, VA." />
+
+  <style>
+    :root {
+      /* Strictly Limited to Logo Colors */
+      --logo-navy: #1b365d;       /* Deep charcoal-navy from the primary text & dome */
+      --logo-teal: #519cb9;       /* Slate-teal from the open book accent */
+      --white: #ffffff;
+      
+      --card-radius: 12px;
+      --container-width: 1140px;
+    }
+
+    /* Reset & Clean System Typography (Bypasses Google Fonts block) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      line-height: 1.6; 
+      background: var(--white); 
+      color: var(--logo-navy); 
+      -webkit-font-smoothing: antialiased; 
+    }
+    a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+    .container { width: min(var(--container-width), 92%); margin: 0 auto; }
+
+    /* Header */
+    header.site-header {
+      background: var(--white);
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 2px solid var(--logo-navy);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+    .brand { display: flex; align-items: center; gap: 20px; }
+    .brand img {
+        height: 110px;
+        width: auto;
+        object-fit: contain;
+    }
+    .brand .title {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: var(--logo-navy);
+    }
+    nav.header-nav { display: flex; gap: 8px; align-items: center; }
+    nav.header-nav a {
+        color: var(--logo-navy);
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
+    nav.header-nav a:hover {
+        background: var(--logo-navy);
+        color: var(--white);
+    }
+    nav.header-nav a.instagram-nav-link { color: var(--logo-teal); }
+    nav.header-nav a.instagram-nav-link:hover { color: var(--white); }
+
+    /* Hero Section with Logo-Tinted Background Overlay */
+    .hero {
+      color: var(--white);
+      padding: 120px 0 90px;
+      background:
+        linear-gradient(135deg, rgba(27, 54, 93, 0.94) 0%, rgba(15, 32, 56, 0.98) 100%),
+        url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTWoddrMI6cli0R3STCSv4_vI-Xm0JpPi-ev9VZ3QmwokKj53PglJ9Jj4amhXW9LGXMPW4QmFHavu2oDsw') center/cover no-repeat;
+    }
+    .hero .hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center; }
+    .hero h1 { 
+      font-weight: 700; 
+      font-size: clamp(2.2rem, 4vw, 3.2rem); 
+      line-height: 1.15; 
+      color: var(--white);
+    }
+    .hero p.lead { margin: 18px 0 0; color: var(--white); opacity: 0.9; max-width: 600px; font-size: 1.1rem; }
+    .hero .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+    
+    /* Buttons */
+    .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 700; cursor: pointer; text-align: center; font-size: 0.95rem; transition: all 0.2s ease; }
+    .btn-primary { background: var(--logo-teal); color: var(--white); }
+    .btn-primary:hover { background: var(--logo-navy); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border: 2px solid var(--white); color: var(--white); }
+    .btn-ghost:hover { background: var(--white); color: var(--logo-navy); }
+
+    /* Floating Hero Card */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--card-radius); padding: 32px; border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    }
+    .hero-card h3 { margin: 0 0 16px; font-size: 1.3rem; color: var(--logo-teal); }
+    .hero-card p { margin: 10px 0; color: var(--white); font-size: 1rem; }
+    .hero-card .time-block { font-size: 1.1rem; font-weight: 700; }
+    .hero-card .note { margin-top: 18px; font-size: 0.85rem; opacity: 0.7; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 12px; }
+
+    /* Layout Elements */
+    section { padding: 80px 0; }
+    .section-title { font-size: 2rem; color: var(--logo-navy); margin-bottom: 16px; font-weight: 700; }
+
+    /* About Section Grid */
+    .about-grid { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; }
+    .about-card { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
+    .about-card p { color: var(--logo-navy); margin: 0; line-height: 1.75; font-size: 1.05rem; }
+
+    /* Registration Layout */
+    .register-wrap { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+    .form-panel { background: var(--white); padding: 32px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
+    .form-panel h3 { color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 20px; }
+    iframe.form-embed { width: 100%; min-height: 780px; border-radius: 6px; border: 1px solid var(--logo-navy); background: var(--white); }
+
+    /* Payment Panel Sidebar */
+    .pay-panel { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); border-top: 6px solid var(--logo-teal); }
+    .pay-panel h3 { color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 12px; }
+    .pay-panel p { color: var(--logo-navy); margin: 12px 0; font-size: 0.98rem; opacity: 0.9; }
+
+    /* Directory details list styling */
+    .info-list { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--logo-navy); }
+    .info-title { font-weight: 700; color: var(--logo-teal); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .info-link { font-weight: 600; color: var(--logo-navy); display: inline-block; margin-bottom: 14px; }
+    .info-link:hover { color: var(--logo-teal); }
+
+    /* Footer */
+    footer.site-footer { background: var(--logo-navy); color: var(--white); padding: 60px 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+    .footer .contact a { color: var(--white); font-size: 0.95rem; font-weight: 600; text-decoration: underline; }
+    .footer .contact a:hover { color: var(--logo-teal); }
+    .footer .bio .arabic-title { font-size: 1.4rem; margin-bottom: 8px; color: var(--white); }
+    .footer .bio .english-sub { color: var(--white); opacity: 0.8; font-size: 0.9rem; max-width: 600px; margin: 0 auto; }
+
+    /* Responsive Design */
+    @media (max-width: 980px){
+      .hero .hero-grid, .about-grid, .register-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .brand img { height: 90px; }
+      .hero { padding: 80px 0 60px; }
+      iframe.form-embed { min-height: 850px; }
+    }
+    @media (max-width: 560px){
+      .header-inner { flex-direction: column; gap: 16px; text-align: center; padding: 16px 0; }
+      .brand { flex-direction: column; gap: 10px; }
+      nav.header-nav { flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2rem; }
+      .btn { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-    <h1>If you see this, the file format works!</h1>
-</body>
-</html>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-label="Tibyan Institute">
+        <img src="logo_2.png" alt="Tibyan Institute logo" />
+        <div class="title">Tibyan Institute</div>
+      </div>
+
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
