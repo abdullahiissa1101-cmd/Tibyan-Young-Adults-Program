@@ -1,334 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tibyan Young Adults Program</title>
-  <meta name="description" content="Register for the Tibyan Young Adults Program in Falls Church, Virginia. Classes are held Saturdays and Sundays from 5:00 PM to 8:00 PM." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tibyan Institute — Young Adults Program</title>
+  <meta name="description" content="Tibyan Institute for Qur'an Memorization and Islamic Sciences — register for the Young Adults program in Falls Church, VA." />
   <style>
     :root{
-      --primary-blue: #0b4da0;
-      --teal: #1f6f78;
-      --accent-gold: #c59b2a;
-      --cream: #f7f9fb;
-      --white: #ffffff;
-      --text: #24323d;
-      --muted: #5b6b75;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --radius: 14px;
+      --navy:#0b4da0;
+      --gold:#c59b2a;
+      --teal:#1f6f78;
+      --white:#ffffff;
+      --muted:#5b6b75;
+      --bg:#f7f9fb;
+      --card-radius:14px;
+      --shadow: 0 10px 30px rgba(2,18,36,0.06);
+      --container-width:1100px;
     }
 
+    /* Reset & base */
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:var(--cream);
-      line-height:1.6;
-    }
+    html{font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;line-height:1.5}
+    body{margin:0;background:var(--bg);color:#21303a;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--container-width),94%);margin:0 auto}
 
-    a{color:inherit}
-    .container{width:min(1100px,92%);margin:0 auto}
-
-    /* Topbar with logo */
-    .topbar{
-      background:var(--primary-blue);
+    /* Topbar / header */
+    header.site-header{
+      background:linear-gradient(180deg,var(--navy),#083a7a);
       color:var(--white);
-      padding:12px 0;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 3px 10px rgba(0,0,0,0.08);
+      position:sticky;top:0;z-index:40;
+      box-shadow:0 6px 20px rgba(2,18,36,0.08);
     }
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
-    .brand img{height:44px;width:auto;border-radius:6px;background:var(--white);padding:6px}
-    .brand .title{font-size:1.05rem}
-    .nav{display:flex;gap:16px;flex-wrap:wrap}
-    .nav a{text-decoration:none;color:var(--white);font-size:0.95rem;opacity:0.95}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{height:64px;width:auto;border-radius:10px;background:rgba(255,255,255,0.06);padding:6px;box-shadow:0 6px 18px rgba(2,18,36,0.08)}
+    .brand .title{font-weight:800;font-size:1.05rem;letter-spacing:0.2px}
+    nav.header-nav{display:flex;gap:14px;align-items:center}
+    nav.header-nav a{color:rgba(255,255,255,0.95);padding:8px 12px;border-radius:10px;font-weight:700;font-size:0.95rem}
+    nav.header-nav a:hover{background:rgba(255,255,255,0.04)}
 
     /* Hero */
     .hero{
-      background:
-        linear-gradient(rgba(11,77,160,0.72), rgba(11,77,160,0.72)),
-        url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
       color:var(--white);
-      padding:88px 0 72px;
+      padding:84px 0 56px;
+      background:
+        linear-gradient(180deg, rgba(11,77,160,0.78), rgba(6,36,80,0.78)),
+        url('https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      position:relative;
     }
-    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:28px;align-items:center}
-    .hero h1{margin:0 0 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.05}
-    .hero p{max-width:640px;font-size:1.05rem;color:rgba(255,255,255,0.95);margin-bottom:18px}
-    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .btn{display:inline-block;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;transition:transform .18s ease}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--accent-gold);color:#111}
-    .btn-secondary{background:transparent;border:2px solid rgba(255,255,255,0.9);color:var(--white)}
+    .hero .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;width:min(var(--container-width),94%);margin:0 auto}
+    .hero h1{margin:0;font-size:clamp(1.8rem,3.6vw,2.8rem);line-height:1.02;font-weight:800}
+    .hero p.lead{margin:12px 0 0;color:rgba(255,255,255,0.95);max-width:680px;font-size:1.05rem}
+    .hero .cta-row{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;cursor:pointer}
+    .btn-primary{background:var(--gold);color:#081226}
+    .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,0.12);color:var(--white)}
 
     .hero-card{
-      background:rgba(255,255,255,0.08);
-      backdrop-filter:blur(6px);
-      border:1px solid rgba(255,255,255,0.12);
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.06);
+      box-shadow:var(--shadow);backdrop-filter:blur(6px);
     }
-    .hero-card h3{margin-top:0;margin-bottom:12px;font-size:1.15rem}
-    .hero-card p{margin:6px 0;font-size:0.98rem}
+    .hero-card h3{margin:0 0 8px;font-size:1.05rem}
+    .hero-card p{margin:6px 0;color:rgba(255,255,255,0.92);font-size:0.95rem}
 
-    .section{padding:64px 0}
-    .section-alt{background:var(--white)}
-    .section h2{margin-top:0;margin-bottom:12px;font-size:1.9rem;color:var(--primary-blue)}
-    .section-intro{max-width:760px;color:var(--muted);margin-bottom:28px}
+    /* Main sections */
+    main{margin-top:28px}
+    section{padding:48px 0}
+    .section-title{font-size:1.6rem;color:var(--navy);margin:0 0 8px}
+    .section-sub{color:var(--muted);margin:0 0 20px;max-width:760px}
 
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border-top:4px solid var(--accent-gold)}
-    .card h3{margin-top:0;margin-bottom:10px;color:var(--primary-blue)}
+    /* About (no flyer) */
+    .about-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+    .about-card{background:var(--white);padding:22px;border-radius:var(--card-radius);box-shadow:var(--shadow)}
+    .about-card h3{margin-top:0;color:var(--navy)}
+    .about-card p{color:var(--muted);margin:10px 0}
 
-    .schedule-box{background:linear-gradient(135deg,#ffffff,#f7fbfb);border-left:6px solid var(--teal);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .highlight{color:var(--teal);font-weight:700}
+    /* Registration area */
+    .register-wrap{display:grid;grid-template-columns:1fr 460px;gap:22px;align-items:start}
+    .form-panel{background:var(--white);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+    .form-panel h3{margin-top:0;color:var(--navy)}
+    iframe.form-embed{width:100%;min-height:760px;border-radius:10px;border:1px solid rgba(2,18,36,0.04)}
 
-    .register-wrap{display:grid;grid-template-columns:1fr 0.95fr;gap:22px;align-items:start}
-    .info-panel,.form-panel{background:var(--white);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .notice{background:#fff8e6;border-left:4px solid var(--accent-gold);padding:14px;border-radius:10px;margin-top:14px;color:#5b4a22}
-
-    iframe{width:100%;min-height:820px;border:none;border-radius:10px;background:#fff}
-
-    /* Flyer card styles */
-    .flyer-card {
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 20px;
-      align-items: start;
-      margin-top: 28px;
-    }
-
-    .flyer-info {
-      padding: 18px;
-      background: linear-gradient(180deg,#ffffff,#fbfdff);
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(2,18,36,0.06);
-      border-left: 6px solid var(--teal);
-    }
-
-    .flyer-info h3 { margin-top: 0; color: var(--primary-blue); }
-    .flyer-info p { margin: 8px 0; color: var(--muted); }
-
-    .flyer-wrap {
-      display:block;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.04);
-    }
-
-    .flyer-img {
-      display:block;
-      width:100%;
-      height:auto;
-      max-height: 620px;
-      object-fit: cover;
-      object-position: center;
-      vertical-align: middle;
-    }
-
-    .flyer-actions {
-      display:flex;
-      gap:10px;
-      padding:12px;
-      justify-content:flex-end;
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.98));
-    }
-
-    .btn-download {
-      background: var(--primary-blue);
-      color: #fff;
-      padding:10px 14px;
-      border-radius: 999px;
-      text-decoration:none;
-      font-weight:700;
-    }
+    .pay-panel{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:var(--shadow);border-left:6px solid var(--teal)}
+    .pay-panel h3{margin-top:0;color:var(--navy)}
+    .pay-panel p{color:var(--muted);margin:8px 0}
 
     /* Footer */
-    .footer{background:var(--primary-blue);color:rgba(255,255,255,0.95);padding:28px 0;text-align:center;font-size:0.95rem}
-    .footer .social{display:flex;flex-direction:column;gap:6px;align-items:center;margin-top:10px}
-    .social a{color:var(--white);text-decoration:none;font-weight:700}
-    .social .bio{color:rgba(255,255,255,0.92);font-size:0.95rem;max-width:720px}
+    footer.site-footer{background:var(--navy);color:var(--white);padding:28px 0;margin-top:28px}
+    .footer-inner{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .footer .contact{font-weight:700}
+    .footer .bio{color:rgba(255,255,255,0.92);text-align:center;max-width:760px}
 
-    .tag{display:inline-block;background:rgba(197,155,42,0.12);color:var(--accent-gold);border:1px solid rgba(197,155,42,0.28);padding:6px 12px;border-radius:999px;font-size:0.9rem;margin-bottom:14px}
-
-    @media (max-width:900px){
-      .hero-grid,.register-wrap,.cards{grid-template-columns:1fr}
-      .flyer-card{grid-template-columns:1fr}
-      iframe{min-height:900px}
+    /* Utilities & responsive */
+    .muted{color:var(--muted)}
+    @media (max-width:980px){
+      .hero .hero-grid,.about-grid,.register-wrap{grid-template-columns:1fr}
+      .brand img{height:56px}
+      .hero{padding:64px 0 44px}
+      iframe.form-embed{min-height:900px}
     }
-    @media (max-width:600px){
-      .hero{padding:64px 0 56px}
-      .topbar-inner{justify-content:center}
-      .nav{justify-content:center}
-      .btn{width:100%;text-align:center}
-      .brand img{height:36px}
+    @media (max-width:560px){
+      .brand img{height:48px}
+      .header-inner{padding:10px 0}
+      .hero h1{font-size:1.6rem}
+      .btn{width:100%}
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <!-- Replace 'logo.png' with your actual logo path -->
-        <img src="logo.png" alt="Tibyan logo" />
-        <div class="title">Tibyan Young Adults Program</div>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-label="Tibyan Institute">
+        <img src="https://raw.githubusercontent.com/abdullahiissa1101-cmd/Tibyan-Young-Adults-Program/main/logo.png" alt="Tibyan Institute logo" />
+        <div class="title">Tibyan Institute</div>
       </div>
 
-      <nav class="nav">
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#schedule">Schedule</a>
         <a href="#register">Register</a>
-        <a href="#payment">Payment</a>
+        <a href="#payment">Pay</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="tag">Community • Learning • Growth</div>
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="hero-grid">
+      <div style="padding-right:6px">
+        <div class="tag" style="display:inline-block;background:rgba(197,155,42,0.12);color:var(--gold);padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px">Qur'an • Tajweed • Ijazah</div>
         <h1>Tibyan Young Adults Program</h1>
-        <p>At Tibyan, our mission is to provide a specialized youth program designed for students proficient in Quranic studies.</p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#register">Register Now</a>
-          <a class="btn btn-secondary" href="#payment">Pay Now</a>
+        <p class="lead">A focused program for students advancing in Qur'anic studies — strengthening memorization, tajweed, and classical recitation.</p>
+
+        <div class="cta-row" aria-hidden="false">
+          <a class="btn btn-primary" href="#register">Register</a>
+          <a class="btn btn-ghost" href="#payment">Pay Now</a>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h3>Program Details</h3>
-        <p><strong>Class Name:</strong> Tibyan Young Adults Program</p>
-        <p><strong>Days:</strong> Saturdays and Sundays</p>
-        <p><strong>Time:</strong> 5:00 PM – 8:00 PM</p>
-        <p><strong>Location:</strong> Falls Church, VA, United States, Virginia</p>
-        <p><strong>Program Fee:</strong> $90 per month</p>
-        <div style="margin-top:12px">
-          <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding:10px 14px;font-size:0.95rem">
-            @tibyan.institute
-          </a>
-        </div>
+      <aside class="hero-card" aria-labelledby="hero-details">
+        <h3 id="hero-details">Program at a glance</h3>
+        <p><strong>Days</strong>: Saturdays & Sundays</p>
+        <p><strong>Time</strong>: Evenings (details provided after registration)</p>
+        <p class="muted" style="margin-top:8px">Register to receive full schedule, instructor details, and enrollment confirmation.</p>
       </aside>
     </div>
   </section>
 
-  <section id="about" class="section section-alt">
-    <div class="container">
-      <h2>About the Program</h2>
-      <p class="section-intro">At Tibyan, our mission is to provide a specialized youth program designed for students proficient in Quranic studies.</p>
+  <main>
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading" class="section-title">About the Program</h2>
+        <p class="section-sub">Tibyan Institute provides a structured curriculum to deepen Qur'anic knowledge through memorization, tajweed, and classical recitation. Our approach balances traditional methodology with supportive instruction.</p>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Purpose</h3>
-          <p>Our aim is to support young adults in achieving excellence in Quranic knowledge.</p>
-        </div>
-        <div class="card">
-          <h3>Who It’s For</h3>
-          <p>Young Adults.</p>
-        </div>
-        <div class="card">
-          <h3>What to Expect</h3>
-          <p>Subjects offered include Strengthening Hifdth, Tajweed Theory, Jazariyyah, Tuhfatul Atfal, and Shadibyyah.</p>
-        </div>
-      </div>
+        <div class="about-grid" style="margin-top:18px">
+          <div class="about-card" aria-hidden="false">
+            <h3>What to expect</h3>
+            <p>Focused weekly sessions, small cohorts, and guided study plans designed to support steady progress toward advanced recitation and ijazah preparation.</p>
 
-      <!-- Flyer card inserted here -->
-      <div class="flyer-card" aria-labelledby="flyer-heading">
-        <div class="flyer-info" id="flyer-heading">
-          <h3>Intensive Qur'an Program — Year 2</h3>
-          <p><strong>Ijazah Preparation • May 3, 2025 – Aug 31, 2025</strong></p>
-          <p>Sessions: Saturdays 5:00 PM – 9:00 PM; Sundays 5:00 PM – 9:00 PM.</p>
-          <p>Subjects: Strengthening Hifdh; Tajweed Theory; Jazariyyah.</p>
-          <p>At Tibyan, our mission is to provide a specialized youth program designed for students proficient in Qur'anic studies.</p>
+            <h3 style="margin-top:18px">How to join</h3>
+            <p>Complete the registration form and follow the payment link to confirm your seat. We will follow up with schedule and onboarding details.</p>
+          </div>
 
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="#register">Register Now</a>
-            <a class="btn btn-secondary" href="#payment">Pay Now</a>
+          <div style="display:flex;align-items:center;justify-content:center">
+            <!-- Visual accent card (no flyer) -->
+            <div style="background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:var(--shadow);border-left:6px solid var(--teal);max-width:420px">
+              <h3 style="margin-top:0;color:var(--navy)">Ready to begin?</h3>
+              <p class="muted">Register now and complete payment to secure your place. We will contact you with next steps.</p>
+              <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn btn-primary" href="#register">Register</a>
+                <a class="btn btn-ghost" href="#payment">Pay Now</a>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <figure class="flyer-wrap" role="group" aria-label="Program flyer">
-          <!-- Replace 'flyer.png' with the actual path where you upload the flyer -->
-          <img src="flyer.png" alt="Intensive Qur'an Program Year 2 flyer — Ijazah Preparation. May 3 to Aug 31, Saturdays & Sundays 5–9 PM." class="flyer-img" loading="lazy" />
-          <div class="flyer-actions">
-            <a class="btn-download" href="flyer.png" download="Tibyan_Intensive_Quran_Year2.png">Download Flyer</a>
-            <a class="btn btn-secondary" href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer">@tibyan.institute</a>
+    <section id="register" aria-labelledby="register-heading">
+      <div class="container">
+        <h2 id="register-heading" class="section-title">Register</h2>
+        <p class="section-sub">Complete the short registration form below. After submitting, use the payment link to confirm your enrollment.</p>
+
+        <div class="register-wrap" style="margin-top:18px">
+          <div class="form-panel" aria-labelledby="form-heading">
+            <h3 id="form-heading">Registration Form</h3>
+            <!-- Embedded Google Form -->
+            <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSco31TFh0bkg9fJ-bbTqJ6CejAxKv11euRYugJMNCJrnGIxQA/viewform?embedded=true" title="Tibyan registration form">Loading…</iframe>
           </div>
-        </figure>
-      </div>
-      <!-- End flyer card -->
 
-    </div>
-  </section>
+          <aside class="pay-panel" id="payment" aria-labelledby="pay-heading">
+            <h3 id="pay-heading">Payment</h3>
+            <p class="muted">Complete payment after registration to confirm your seat. Click the button below to proceed to the secure payment page.</p>
+            <div style="margin-top:12px">
+              <a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer">Pay Now</a>
+            </div>
 
-  <section id="schedule" class="section">
-    <div class="container">
-      <h2>Schedule</h2>
-      <p class="section-intro">Classes are currently in session and are held weekly on weekends.</p>
-
-      <div class="schedule-box">
-        <p><strong>Program:</strong> Tibyan Young Adults Program</p>
-        <p><strong>Days:</strong> Saturdays and Sundays</p>
-        <p><strong>Time:</strong> <span class="highlight">5:00 PM – 8:00 PM</span></p>
-        <p><strong>Location:</strong> Falls Church, VA, United States, Virginia</p>
-        <p><strong>Status:</strong> Currently in session</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="register" class="section section-alt">
-    <div class="container">
-      <h2>Register</h2>
-      <p class="section-intro">Complete the registration form below. Your information will be stored automatically. After submitting your registration, please complete payment through the payment link to confirm your seat.</p>
-
-      <div class="register-wrap">
-        <div class="info-panel">
-          <h3>Registration Information</h3>
-          <p>Please complete the form with accurate contact details so we can reach you with program updates and confirmation information.</p>
-          <p>Your registration is received when you submit the form, and your information will be stored automatically through the registration system.</p>
-          <div class="notice">Your registration is received when you submit the form. Your place is confirmed after payment is completed.</div>
-
-          <div id="payment" style="margin-top:18px">
-            <h3>Payment</h3>
-            <p>After registering, use the payment link below to submit payment for the program.</p>
-            <p><a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer">Pay Now</a></p>
-            <p><strong>Fee:</strong> $90 per month</p>
-          </div>
-        </div>
-
-        <div class="form-panel">
-          <h3>Registration Form</h3>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSco31TFh0bkg9fJ-bbTqJ6CejAxKv11euRYugJMNCJrnGIxQA/viewform?embedded=true" title="Tibyan Young Adults Program Registration Form">Loading…</iframe>
+            <div style="margin-top:18px;color:var(--muted);font-size:0.95rem">
+              <p><strong>Contact</strong></p>
+              <p style="margin:6px 0"><a href="tel:+17032008668" style="color:inherit;font-weight:700">(703) 200-8668</a></p>
+              <p style="margin:6px 0"><a href="mailto:tibyaninstitute1@gmail.com" style="color:inherit;font-weight:700">tibyaninstitute1@gmail.com</a></p>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p><strong>Tibyan Young Adults Program</strong></p>
-      <p>Saturdays and Sundays • 5:00 PM – 8:00 PM</p>
-      <p>Falls Church, VA, United States, Virginia</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div style="text-align:center">
+        <div style="font-weight:800;font-size:1.05rem">Tibyan Institute</div>
+        <div class="contact" style="margin-top:6px"><a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" style="color:var(--white)">@tibyan.institute</a></div>
+      </div>
 
-      <div class="social" style="margin-top:10px">
-        <a class="contact-link" href="tel:+17032008668">(703) 200-8668</a> |
-        <a class="contact-link" href="mailto:tibyaninstitute1@gmail.com">tibyaninstitute1@gmail.com</a>
-
-        <div style="margin-top:12px">
-          <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" style="color:var(--white);text-decoration:none;font-weight:700">@tibyan.institute</a>
-        </div>
-
-        <div class="bio" style="margin-top:8px">
-          <div>‎معهد التبيان لتحفيظ القرآن والعلوم الاسلامية</div>
-          <div>Tibyan Institute for Qur'an Memorization and Islamic Sciences</div>
-          <div>📍Falls Church, VA</div>
-        </div>
+      <div class="bio" aria-hidden="false">
+        <div>‎معهد التبيان لتحفيظ القرآن والعلوم الاسلامية</div>
+        <div>Tibyan Institute for Qur'an Memorization and Islamic Sciences — Falls Church, VA</div>
       </div>
     </div>
   </footer>
