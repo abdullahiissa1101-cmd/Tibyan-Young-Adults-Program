@@ -12,42 +12,38 @@
 
   <style>
     :root {
-      /* Exact Earthy/Muted interpretations of your Logo colors */
-      --logo-navy: #11324D;       /* Deep, sophisticated earthy midnight navy */
-      --logo-teal: #4B869A;       /* Muted slate/earthy teal from the book icon */
-      --bg-cream: #F7F5F2;        /* High-end off-white canvas background */
-      --text-dark: #2C3333;       /* Professional off-black for premium contrast */
-      --text-muted: #6B7280;     /* Clean neutral gray for secondary text */
+      /* Strictly Limited to Logo Colors */
+      --logo-navy: #1b365d;       /* Deep charcoal-navy from the primary text & dome */
+      --logo-teal: #519cb9;       /* Slate-teal from the open book accent */
       --white: #ffffff;
       
-      --card-radius: 16px;
-      --shadow-subtle: 0 4px 20px rgba(17, 50, 77, 0.03);
+      --card-radius: 12px;
       --container-width: 1140px;
     }
 
-    /* Reset & Premium Typography */
+    /* Reset & Typography */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { 
       font-family: 'Plus Jakarta Sans', sans-serif; 
       line-height: 1.6; 
-      background: var(--bg-cream); 
-      color: var(--text-dark); 
+      background: var(--white); 
+      color: var(--logo-navy); 
       -webkit-font-smoothing: antialiased; 
     }
     a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
     .container { width: min(var(--container-width), 92%); margin: 0 auto; }
 
-    /* Header / Clean Minimal Navigation */
+    /* Header */
     header.site-header {
       background: var(--white);
       position: sticky; top: 0; z-index: 40;
-      border-bottom: 1px solid rgba(17, 50, 77, 0.06);
+      border-bottom: 2px solid var(--logo-navy);
     }
     .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
     .brand { display: flex; align-items: center; gap: 20px; }
     .brand img {
-        height: 110px; /* Expanded size for excellent visibility */
+        height: 110px;
         width: auto;
         object-fit: contain;
     }
@@ -55,7 +51,213 @@
         font-family: 'Playfair Display', serif;
         font-weight: 700;
         font-size: 1.4rem;
-        letter-spacing: -0.3px;
         color: var(--logo-navy);
     }
-    nav.header-nav { display
+    nav.header-nav { display: flex; gap: 8px; align-items: center; }
+    nav.header-nav a {
+        color: var(--logo-navy);
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.95rem;
+    }
+    nav.header-nav a:hover {
+        background: var(--logo-navy);
+        color: var(--white);
+    }
+    nav.header-nav a.instagram-nav-link { color: var(--logo-teal); }
+    nav.header-nav a.instagram-nav-link:hover { color: var(--white); }
+
+    /* Hero Section with Logo-Tinted Background Overlay */
+    .hero {
+      color: var(--white);
+      padding: 120px 0 90px;
+      background:
+        linear-gradient(135deg, rgba(27, 54, 93, 0.94) 0%, rgba(15, 32, 56, 0.98) 100%),
+        url('https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTWoddrMI6cli0R3STCSv4_vI-Xm0JpPi-ev9VZ3QmwokKj53PglJ9Jj4amhXW9LGXMPW4QmFHavu2oDsw') center/cover no-repeat;
+    }
+    .hero .hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center; }
+    .hero h1 { 
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; 
+      font-size: clamp(2.2rem, 4vw, 3.2rem); 
+      line-height: 1.15; 
+      color: var(--white);
+    }
+    .hero p.lead { margin: 18px 0 0; color: var(--white); opacity: 0.9; max-width: 600px; font-size: 1.1rem; }
+    .hero .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+    
+    /* Buttons */
+    .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 700; cursor: pointer; text-align: center; font-size: 0.95rem; transition: all 0.2s ease; }
+    .btn-primary { background: var(--logo-teal); color: var(--white); }
+    .btn-primary:hover { background: var(--logo-navy); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border: 2px solid var(--white); color: var(--white); }
+    .btn-ghost:hover { background: var(--white); color: var(--logo-navy); }
+
+    /* Floating Hero Card */
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--card-radius); padding: 32px; border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+    }
+    .hero-card h3 { font-family: 'Playfair Display', serif; margin: 0 0 16px; font-size: 1.3rem; color: var(--logo-teal); }
+    .hero-card p { margin: 10px 0; color: var(--white); font-size: 1rem; }
+    .hero-card .time-block { font-size: 1.1rem; font-weight: 700; }
+    .hero-card .note { margin-top: 18px; font-size: 0.85rem; opacity: 0.7; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 12px; }
+
+    /* Layout Elements */
+    section { padding: 80px 0; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--logo-navy); margin-bottom: 16px; font-weight: 700; }
+
+    /* About Section Grid */
+    .about-grid { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; }
+    .about-card { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
+    .about-card p { color: var(--logo-navy); margin: 0; line-height: 1.75; font-size: 1.05rem; }
+
+    /* Registration Layout */
+    .register-wrap { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
+    .form-panel { background: var(--white); padding: 32px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
+    .form-panel h3 { font-family: 'Playfair Display', serif; color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 20px; }
+    iframe.form-embed { width: 100%; min-height: 780px; border-radius: 6px; border: 1px solid var(--logo-navy); background: var(--white); }
+
+    /* Payment Panel Sidebar */
+    .pay-panel { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); border-top: 6px solid var(--logo-teal); }
+    .pay-panel h3 { font-family: 'Playfair Display', serif; color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 12px; }
+    .pay-panel p { color: var(--logo-navy); margin: 12px 0; font-size: 0.98rem; opacity: 0.9; }
+
+    /* Directory details list styling */
+    .info-list { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--logo-navy); }
+    .info-title { font-weight: 700; color: var(--logo-teal); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .info-link { font-weight: 600; color: var(--logo-navy); display: inline-block; margin-bottom: 14px; }
+    .info-link:hover { color: var(--logo-teal); }
+
+    /* Footer */
+    footer.site-footer { background: var(--logo-navy); color: var(--white); padding: 60px 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+    .footer .contact a { color: var(--white); font-size: 0.95rem; font-weight: 600; text-decoration: underline; }
+    .footer .contact a:hover { color: var(--logo-teal); }
+    .footer .bio .arabic-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; color: var(--white); }
+    .footer .bio .english-sub { color: var(--white); opacity: 0.8; font-size: 0.9rem; max-width: 600px; margin: 0 auto; }
+
+    /* Responsive Design */
+    @media (max-width: 980px){
+      .hero .hero-grid, .about-grid, .register-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .brand img { height: 90px; }
+      .hero { padding: 80px 0 60px; }
+      iframe.form-embed { min-height: 850px; }
+    }
+    @media (max-width: 560px){
+      .header-inner { flex-direction: column; gap: 16px; text-align: center; padding: 16px 0; }
+      .brand { flex-direction: column; gap: 10px; }
+      nav.header-nav { flex-wrap: wrap; justify-content: center; }
+      .hero h1 { font-size: 2rem; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-label="Tibyan Institute">
+        <img src="logo.png" alt="Tibyan Institute logo" />
+        <div class="title">Tibyan Institute</div>
+      </div>
+
+      <nav class="header-nav" role="navigation" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#register">Register</a>
+        <a href="#payment">Pay</a>
+        <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" class="instagram-nav-link">Instagram Page</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" role="region" aria-label="Hero Image Background">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag" style="display:inline-block; background:var(--logo-teal); color:var(--white); padding:6px 14px; border-radius:4px; font-weight:700; margin-bottom:18px; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;">Qur'an • Tajweed • Ijazah</div>
+        <h1>Tibyan Young Adults Program</h1>
+        <p class="lead">A specialized youth program designed for students proficient in Quranic studies to achieve higher excellence.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#register">Register Now</a>
+          <a class="btn btn-ghost" href="#payment">Pay Tuition</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-labelledby="hero-details">
+        <h3 id="hero-details">Program Schedule</h3>
+        <p><strong class="time-block">Saturdays:</strong> 5:00 PM - 8:00 PM</p>
+        <p><strong class="time-block">Sundays:</strong> 5:00 PM - 8:00 PM</p>
+        <p class="note">Please note: Students are expected to arrive on time for all scheduled sessions.</p>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-card">
+            <h2 id="about-heading" class="section-title">About the Program</h2>
+            <p>At Tibyan, our mission is to provide a specialized youth program designed for students proficient in Quranic studies. Our aim is to support young adults in achieving excellence in Quranic education.</p>
+          </div>
+
+          <div class="about-card" style="border-top: 6px solid var(--logo-teal)">
+            <h2 class="section-title" style="font-size: 1.3rem; margin-bottom: 12px;">Location</h2>
+            <p style="color: var(--logo-navy); font-weight: 700; margin-bottom: 4px; font-size: 1.1rem;">Tibyan Institute</p>
+            <p style="color: var(--logo-navy); margin: 0; font-size: 1rem; font-weight: 600;">5699 Columbia Pike, STE 201 & 202</p>
+            <p style="color: var(--logo-navy); margin: 0 0 16px 0; font-size: 0.95rem; opacity: 0.8;">Falls Church, VA 22041</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" style="color: var(--logo-teal); font-weight:700; font-size:0.95rem; text-decoration: underline;">➔ View on Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" style="background: var(--white); border-top: 2px solid var(--logo-navy); border-bottom: 2px solid var(--logo-navy);">
+      <div class="container">
+        <div class="register-wrap">
+          <div class="form-panel" aria-labelledby="form-heading">
+            <h3 id="form-heading">Registration Form</h3>
+            <iframe class="form-embed" src="https://docs.google.com/forms/d/e/1FAIpQLSco31TFh0bkg9fJ-bbTqJ6CejAxKv11euRYugJMNCJrnGIxQA/viewform?embedded=true" title="Tibyan registration form">Loading…</iframe>
+          </div>
+
+          <aside class="pay-panel" id="payment" aria-labelledby="pay-heading">
+            <h3>Payment Portal</h3>
+            <p>Payments are processed securely each month. Please complete your registration by completing the payment below.</p>
+            <div style="margin-top:24px">
+              <a class="btn btn-primary" href="https://buy.stripe.com/dR6aGi3yefwcaKA7ss" target="_blank" rel="noopener noreferrer" style="display:block; width:100%">Proceed to Payment</a>
+            </div>
+
+            <div class="info-list">
+              <div class="info-title">Support & Inquiries</div>
+              <a href="tel:+17032008668" class="info-link">(703) 200-8668</a><br>
+              <a href="mailto:tibyaninstitute1@gmail.com" class="info-link">tibyaninstitute1@gmail.com</a>
+              
+              <div class="info-title" style="margin-top:12px;">Social Media</div>
+              <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer" class="info-link" style="text-decoration: underline; color: var(--logo-teal);">Visit our Instagram Page</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <div style="font-family: 'Playfair Display', serif; font-weight:700; font-size:1.3rem; letter-spacing:0.5px">Tibyan Institute</div>
+        <div class="contact" style="margin-top:8px">
+          <a href="https://instagram.com/tibyan.institute" target="_blank" rel="noopener noreferrer">Our Instagram Page: @tibyan.institute</a>
+        </div>
+      </div>
+
+      <div class="bio" aria-hidden="false">
+        <div class="arabic-title">‎معهد التبيان لتحفيظ القرآن والعلوم الاسلامية</div>
+        <div class="english-sub">Tibyan Institute for Qur'an Memorization and Islamic Sciences — Falls Church, VA</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
