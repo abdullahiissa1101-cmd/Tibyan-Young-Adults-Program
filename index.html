@@ -12,16 +12,13 @@
 
   <style>
     :root {
-      /* Strictly Limited to Logo Colors */
-      --logo-navy: #1b365d;       /* Deep charcoal-navy from the primary text & dome */
-      --logo-teal: #519cb9;       /* Slate-teal from the open book accent */
+      --logo-navy: #1b365d;
+      --logo-teal: #519cb9;
       --white: #ffffff;
-      
       --card-radius: 12px;
       --container-width: 1140px;
     }
 
-    /* Reset & Typography */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { 
@@ -34,7 +31,6 @@
     a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
     .container { width: min(var(--container-width), 92%); margin: 0 auto; }
 
-    /* Header */
     header.site-header {
       background: var(--white);
       position: sticky; top: 0; z-index: 40;
@@ -68,7 +64,6 @@
     nav.header-nav a.instagram-nav-link { color: var(--logo-teal); }
     nav.header-nav a.instagram-nav-link:hover { color: var(--white); }
 
-    /* Hero Section with Logo-Tinted Background Overlay */
     .hero {
       color: var(--white);
       padding: 120px 0 90px;
@@ -87,14 +82,12 @@
     .hero p.lead { margin: 18px 0 0; color: var(--white); opacity: 0.9; max-width: 600px; font-size: 1.1rem; }
     .hero .cta-row { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
     
-    /* Buttons */
     .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-weight: 700; cursor: pointer; text-align: center; font-size: 0.95rem; transition: all 0.2s ease; }
     .btn-primary { background: var(--logo-teal); color: var(--white); }
     .btn-primary:hover { background: var(--logo-navy); transform: translateY(-1px); }
     .btn-ghost { background: transparent; border: 2px solid var(--white); color: var(--white); }
     .btn-ghost:hover { background: var(--white); color: var(--logo-navy); }
 
-    /* Floating Hero Card */
     .hero-card {
       background: rgba(255, 255, 255, 0.08);
       border-radius: var(--card-radius); padding: 32px; border: 1px solid rgba(255, 255, 255, 0.2);
@@ -105,33 +98,27 @@
     .hero-card .time-block { font-size: 1.1rem; font-weight: 700; }
     .hero-card .note { margin-top: 18px; font-size: 0.85rem; opacity: 0.7; border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 12px; }
 
-    /* Layout Elements */
     section { padding: 80px 0; }
     .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--logo-navy); margin-bottom: 16px; font-weight: 700; }
 
-    /* About Section Grid */
     .about-grid { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; }
     .about-card { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
     .about-card p { color: var(--logo-navy); margin: 0; line-height: 1.75; font-size: 1.05rem; }
 
-    /* Registration Layout */
     .register-wrap { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: start; }
     .form-panel { background: var(--white); padding: 32px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); }
     .form-panel h3 { font-family: 'Playfair Display', serif; color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 20px; }
     iframe.form-embed { width: 100%; min-height: 780px; border-radius: 6px; border: 1px solid var(--logo-navy); background: var(--white); }
 
-    /* Payment Panel Sidebar */
     .pay-panel { background: var(--white); padding: 40px; border-radius: var(--card-radius); border: 2px solid var(--logo-navy); border-top: 6px solid var(--logo-teal); }
     .pay-panel h3 { font-family: 'Playfair Display', serif; color: var(--logo-navy); font-size: 1.4rem; margin-bottom: 12px; }
     .pay-panel p { color: var(--logo-navy); margin: 12px 0; font-size: 0.98rem; opacity: 0.9; }
 
-    /* Directory details list styling */
     .info-list { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--logo-navy); }
     .info-title { font-weight: 700; color: var(--logo-teal); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
     .info-link { font-weight: 600; color: var(--logo-navy); display: inline-block; margin-bottom: 14px; }
     .info-link:hover { color: var(--logo-teal); }
 
-    /* Footer */
     footer.site-footer { background: var(--logo-navy); color: var(--white); padding: 60px 0; }
     .footer-inner { display: flex; flex-direction: column; gap: 24px; align-items: center; text-align: center; }
     .footer .contact a { color: var(--white); font-size: 0.95rem; font-weight: 600; text-decoration: underline; }
@@ -139,7 +126,6 @@
     .footer .bio .arabic-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 8px; color: var(--white); }
     .footer .bio .english-sub { color: var(--white); opacity: 0.8; font-size: 0.9rem; max-width: 600px; margin: 0 auto; }
 
-    /* Responsive Design */
     @media (max-width: 980px){
       .hero .hero-grid, .about-grid, .register-wrap { grid-template-columns: 1fr; gap: 32px; }
       .brand img { height: 90px; }
@@ -160,7 +146,7 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <div class="brand" aria-label="Tibyan Institute">
-        <img src="logo.png" alt="Tibyan Institute logo" />
+        <img src="logo_2.png" alt="Tibyan Institute logo" />
         <div class="title">Tibyan Institute</div>
       </div>
 
